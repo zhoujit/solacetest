@@ -1,0 +1,15 @@
+bin
+obj
+*.suo
+*.vspscc
+*.vssscc
+*.csproj.user
+.vs
+
+
+.idea/
+*.iml
+.settings/
+target/
+.classpath
+

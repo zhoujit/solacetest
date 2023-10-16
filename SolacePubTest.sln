@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolacePubTest", "SolacePubTest\SolacePubTest.csproj", "{1B830916-C9E5-4164-980B-3FAF3C330A7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolaceSubTest", "SolaceSubTest\SolaceSubTest.csproj", "{0CFD5214-2A35-4552-BD20-32B099125541}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B830916-C9E5-4164-980B-3FAF3C330A7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B830916-C9E5-4164-980B-3FAF3C330A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B830916-C9E5-4164-980B-3FAF3C330A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B830916-C9E5-4164-980B-3FAF3C330A7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CFD5214-2A35-4552-BD20-32B099125541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CFD5214-2A35-4552-BD20-32B099125541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CFD5214-2A35-4552-BD20-32B099125541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CFD5214-2A35-4552-BD20-32B099125541}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C701BF8-641E-4951-B911-3AF0BF8080AB}
+	EndGlobalSection
+EndGlobal
