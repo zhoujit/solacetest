@@ -20,11 +20,12 @@ internal class Program
 
         SessionProperties sessionProps = new SessionProperties()
         {
-            Host = "localhost",
+            Host = "localhost",  // tcps://hostname:55443
             VPNName = "JerryVPN",
             UserName = "test",
             Password = "test",
-            ReconnectRetries = 3
+            ReconnectRetries = 3,
+            // SSLTrustStoreDir = "certificateDir",  // If use SSL certificate, make sure the exists certificateDir folder, and exists certificates.
         };
 
         //using (IContext context = ContextFactory.Instance.CreateContext(new ContextProperties(), null))
@@ -65,7 +66,7 @@ internal class Program
         using (IMessage message = args.Message)
         {
             // Expecting the message content as a binary attachment
-            Console.WriteLine("Message content: {0}", Encoding.ASCII.GetString(message.BinaryAttachment));
+            Console.WriteLine("Message content: {0}", Encoding.ASCII.GetString(message.BinaryAttachment ?? message.XmlContent));
             flow.Ack(message.ADMessageId);
             MQEventWaitHandle.Set();
         }

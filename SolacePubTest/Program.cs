@@ -16,11 +16,12 @@ internal class Program
 
         SessionProperties sessionProps = new SessionProperties()
         {
-            Host = "localhost",
+            Host = "localhost", // tcps://hostname:55443
             VPNName = "JerryVPN",
             UserName = "test",
             Password = "test",
-            ReconnectRetries = 3
+            ReconnectRetries = 3,
+            // SSLTrustStoreDir = "certificateDir",  // If use SSL certificate, make sure the exists certificateDir folder, and exists certificates.
         };
 
         using (IContext context = ContextFactory.Instance.CreateContext(new ContextProperties(), null))
@@ -30,6 +31,7 @@ internal class Program
             session.Connect();
             message.Destination = ContextFactory.Instance.CreateQueue("TestQueue"); //.CreateTopic("tutorial/topic");
             message.BinaryAttachment = Encoding.ASCII.GetBytes("Send message in c#. Now:" + DateTime.Now.ToString("yyyyMMdd HH:mm:ss"));
+            // message.XmlContent = Encoding.UTF8.GetBytes("<test></test>");
 
             ReturnCode returnCode = session.Send(message);
             if (returnCode == ReturnCode.SOLCLIENT_OK)
