@@ -29,6 +29,10 @@ internal class Program
         using (IMessage message = ContextFactory.Instance.CreateMessage())
         {
             session.Connect();
+
+            var userPropertyMap = message.CreateUserPropertyMap();
+            userPropertyMap.AddInt32("ReleaseYear", 2019);
+
             message.Destination = ContextFactory.Instance.CreateQueue("TestQueue"); //.CreateTopic("tutorial/topic");
             message.BinaryAttachment = Encoding.ASCII.GetBytes("Send message in c#. Now:" + DateTime.Now.ToString("yyyyMMdd HH:mm:ss"));
             // message.XmlContent = Encoding.UTF8.GetBytes("<test></test>");

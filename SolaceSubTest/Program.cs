@@ -49,7 +49,8 @@ internal class Program
             session.Connect();
             flow = session.CreateFlow(new FlowProperties()
             {
-                AckMode = MessageAckMode.ClientAck
+                AckMode = MessageAckMode.ClientAck,
+                // Selector = "ReleaseYear > 2022"
             },
             ContextFactory.Instance.CreateQueue("TestQueue"), null, HandleMessage, FlowHandleMessage);
             flow.Start();
@@ -61,12 +62,12 @@ internal class Program
 
     private static void HandleMessage(object source, MessageEventArgs args)
     {
-        Console.WriteLine("Received published message.");
         // Received a message
         using (IMessage message = args.Message)
         {
             // Expecting the message content as a binary attachment
             Console.WriteLine("Message content: {0}", Encoding.ASCII.GetString(message.BinaryAttachment ?? message.XmlContent));
+            
             flow.Ack(message.ADMessageId);
             MQEventWaitHandle.Set();
         }
