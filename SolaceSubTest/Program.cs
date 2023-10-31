@@ -36,6 +36,21 @@ internal class Program
         //    {
         //        Console.WriteLine("Session successfully connected.");
 
+        //        session.Subscribe(ContextFactory.Instance.CreateTopic("MTM/*"), true);
+
+        //        Console.WriteLine("Waiting for a message to be published...");
+        //        MQEventWaitHandle.WaitOne();
+        //    }
+        //}
+
+        //using (IContext context = ContextFactory.Instance.CreateContext(new ContextProperties(), null))
+        //using (ISession session = context.CreateSession(sessionProps, HandleMessage, null))
+        //{
+        //    ReturnCode returnCode = session.Connect();
+        //    if (returnCode == ReturnCode.SOLCLIENT_OK)
+        //    {
+        //        Console.WriteLine("Session successfully connected.");
+
         //        session.Subscribe(ContextFactory.Instance.CreateTopic("TestTopic"), true);
 
         //        Console.WriteLine("Waiting for a message to be published...");
